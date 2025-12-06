@@ -39,6 +39,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Logo"
+            loading="lazy"
             style={{
               width: "50px",
               height: "50px",

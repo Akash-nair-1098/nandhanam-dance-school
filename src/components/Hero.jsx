@@ -11,8 +11,16 @@ const Hero = () => {
         <img
           src={logo}
           alt="Nandhanam School of Dance Logo"
+          loading="lazy"
           className="mb-3"
-          style={{ width: "200px", height: "200" }} // adjust size
+          style={{
+            width: "200px",
+            height: "200",
+            backgroundColor: "rgba(255, 255, 255, 0.3)",
+            borderRadius: "16px",
+            backdropFilter: "blur(10px)",
+            // border: "1px solid rgba(255, 255, 255, 0.3)",
+          }}
         />
         <h1 className="display-4 fw-bold mb-3">Nandhanam School of Dance</h1>
         <p className="lead mb-4" style={{ color: "#f5b31f" }}>
