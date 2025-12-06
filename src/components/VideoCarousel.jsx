@@ -3,21 +3,24 @@ import React, { useState } from "react";
 const videos = [
   {
     id: "J2e-YD4tGPo",
+    type: "youtube", // ← ADD THIS
     title: "Welcome to Our Platform",
     thumbnail: "https://img.youtube.com/vi/J2e-YD4tGPo/maxresdefault.jpg",
   },
   {
     id: "ptAcn1rBNdc",
+    type: "youtube", // ← ADD THIS
     title: "How It Works",
     thumbnail: "https://img.youtube.com/vi/ptAcn1rBNdc/maxresdefault.jpg",
   },
   {
     id: "bSq_IGkKPtA",
+    type: "youtube", // ← ADD THIS
     title: "Customer Success Story",
     thumbnail: "https://img.youtube.com/vi/bSq_IGkKPtA/maxresdefault.jpg",
   },
   {
-    type: "direct",
+    type: "direct", // ← This one is correct
     url: "https://videos.pexels.com/video-files/4713259/4713259-uhd_2560_1440_30fps.mp4",
     title: "Flying Seagulls - Pexels",
     thumbnail: "https://images.pexels.com/videos/4713259/maxresdefault.jpg",
@@ -64,7 +67,9 @@ export default function VideoCarousel() {
               {videos.map((video, i) => (
                 <div
                   key={i}
-                  className={`carousel-item ${i === activeIndex ? "active" : ""}`}
+                  className={`carousel-item ${
+                    i === activeIndex ? "active" : ""
+                  }`}
                 >
                   <div className="d-flex justify-content-center px-4">
                     <div
@@ -75,7 +80,11 @@ export default function VideoCarousel() {
                     >
                       <div className="position-relative bg-dark">
                         <img
-                          src={thumbErrors[i] ? FALLBACK_THUMBNAIL : video.thumbnail}
+                          src={
+                            thumbErrors[i]
+                              ? FALLBACK_THUMBNAIL
+                              : video.thumbnail
+                          }
                           alt={video.title}
                           className="card-img-top"
                           style={{ height: "500px", objectFit: "cover" }}
@@ -84,7 +93,12 @@ export default function VideoCarousel() {
                         {/* Play Button */}
                         <div className="position-absolute top-50 start-50 translate-middle">
                           <div className="bg-white bg-opacity-90 rounded-circle p-4 shadow-lg">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="#dc3545">
+                            <svg
+                              width="80"
+                              height="80"
+                              viewBox="0 0 24 24"
+                              fill="#dc3545"
+                            >
                               <path d="M8 5v14l11-7L8 5z" />
                             </svg>
                           </div>
@@ -110,7 +124,9 @@ export default function VideoCarousel() {
               type="button"
               data-bs-target="#videoCarousel"
               data-bs-slide="prev"
-              onClick={() => setActiveIndex((i) => (i - 1 + videos.length) % videos.length)}
+              onClick={() =>
+                setActiveIndex((i) => (i - 1 + videos.length) % videos.length)
+              }
             >
               <span className="carousel-control-prev-icon" />
             </button>
@@ -145,7 +161,7 @@ export default function VideoCarousel() {
               </div>
               <div className="modal-body p-4">
                 <div className="ratio ratio-16x9">
-                  {selectedVideo.type === "youtube" ? (
+                  {selectedVideo.type !== "direct" ? (
                     <iframe
                       src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
                       title={selectedVideo.title}
