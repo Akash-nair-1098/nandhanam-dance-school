@@ -108,10 +108,26 @@ section {
 
 .hero-section {
   min-height: 90vh;
+  padding: 6rem 0;
+
+  /* Desktop & Tablet – beautiful fixed parallax */
   background:
     linear-gradient(rgba(15, 23, 42, 0.68), rgba(15, 23, 42, 0.68)),
     url('https://images.pexels.com/photos/20258867/pexels-photo-20258867.jpeg?auto=compress&cs=tinysrgb&w=1600&q=80') center/cover no-repeat fixed;
-  padding: 6rem 0;
+
+  /* Mobile – remove "fixed" + force image to show properly */
+  @media (max-width: 768px) {
+    background:
+      linear-gradient(rgba(15, 23, 42, 0.68), rgba(15, 23, 42, 0.68)),
+      url('https://images.pexels.com/photos/20258867/pexels-photo-20258867.jpeg?auto=compress&cs=tinysrgb&w=800&q=75') center/cover no-repeat;
+    background-attachment: scroll;
+    /* Important: not fixed on mobile */
+    background-position: center 20%;
+    /* Optional: show dancer's face/body better */
+  }
+
+  /* Fallback solid color so it never looks broken */
+  background-color: #0f172a;
 }
 
 .hero-section .btn {

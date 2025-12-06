@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext, useRef } from 'react';
 import Collapse from 'bootstrap/js/dist/collapse';
 import { ThemeContext } from '../App.jsx';
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo.webp";
 
 const Navbar = () => {
   const navigate = useNavigate();
