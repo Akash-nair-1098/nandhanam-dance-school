@@ -28,19 +28,25 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light shadow-sm fixed-top themed-nav">
       <div className="container">
         <a
-          className="navbar-brand fw-bold text-uppercase"
+          className="navbar-brand fw-bold text-uppercase text-center 
+             fs-6 fs-lg-5 lh-sm"
           href="#home"
           onClick={(e) => {
             e.preventDefault();
             handleNavClick("home");
           }}
         >
-          {/* <img
+          <img
             src={logo}
             alt="Logo"
-            style={{ width: "50px", height: "50px", objectFit: "contain" }}
-          /> */}
-          Nandhanam School of Dance
+            style={{
+              width: "50px",
+              height: "50px",
+              objectFit: "contain",
+              marginRight: 10,
+            }}
+          />
+          {/* Nandhanam School of Dance */}
         </a>
         <button
           className="navbar-toggler"
@@ -50,6 +56,9 @@ const Navbar = () => {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={() => {
+            Collapse.getOrCreateInstance(collapseRef.current)?.toggle();
+          }}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -59,7 +68,7 @@ const Navbar = () => {
           ref={collapseRef}
         >
           <ul className="navbar-nav gap-3 align-items-lg-center">
-            {[ "services", "gallery", "contact"].map((section) => (
+            {["home", "services", "gallery", "contact"].map((section) => (
               <li className="nav-item" key={section}>
                 <a
                   className="nav-link fw-semibold text-uppercase small"

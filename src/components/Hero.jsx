@@ -15,7 +15,7 @@ const Hero = () => {
           style={{ width: "200px", height: "200" }} // adjust size
         />
         <h1 className="display-4 fw-bold mb-3">Nandhanam School of Dance</h1>
-        <p className="lead mb-4">
+        <p className="lead mb-4" style={{ color: "#f5b31f" }}>
           Invoking the divine Manthra and seeking the blessing of the cosmic
           dancer Nataraja, Nandhanam School of Dance commenced its Classical
           Dance classes in April 2010, incorporating the traditions of Kerala
