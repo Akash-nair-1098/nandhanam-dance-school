@@ -9,7 +9,7 @@ import Footer from '../components/Footer.jsx';
 import ScrollToTop from '../components/ScrollToTop.jsx';
 import { sendContactForm } from '../api.js';
 import VideoGallery from '../components/VideoCarousel.jsx';
-import ImageGallery from '../components/imageGallery.jsx';
+import ImageGallery from '../components/ImageCarousel.jsx';
 
 
 const Services = React.lazy(() => import('../components/Services.jsx'));
