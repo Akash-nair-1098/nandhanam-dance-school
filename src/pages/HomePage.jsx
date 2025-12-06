@@ -8,9 +8,8 @@ import Testimonials from '../components/Testimonials.jsx';
 import Footer from '../components/Footer.jsx';
 import ScrollToTop from '../components/ScrollToTop.jsx';
 import { sendContactForm } from '../api.js';
-import ImageGallery from '../components/imageGallery.jsx';
-import VideoCarousel from '../components/VideoCarousel.jsx';
 import VideoGallery from '../components/VideoCarousel.jsx';
+import ImageGallery from '../components/imageGallery.jsx';
 
 
 const Services = React.lazy(() => import('../components/Services.jsx'));
